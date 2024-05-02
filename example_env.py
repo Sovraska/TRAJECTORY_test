@@ -1,0 +1,5 @@
+GET_URL = "/vehicles"
+POST_URL = "/vehicles"
+GET_ID_URL = "/vehicles/{id}"
+PUT_URL = "/vehicles/{id}"
+DELETE_URL = "/vehicles/{id}"
