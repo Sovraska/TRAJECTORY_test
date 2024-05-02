@@ -20,7 +20,8 @@ class Vehicle:
     id: Optional[int] = None
 
     def __repr__(self):
-        return f'{self.name} {self.model} {self.year} {self.color} {self.price}'
+        return (f'{self.name} {self.model} '
+                f'{self.year} {self.color} {self.price}')
 
 
 class VehicleManger:
@@ -56,11 +57,15 @@ class VehicleManger:
         if len(response) > 1:  # if query params fails
             for vehicle in response:
                 if list(params)[0] in vehicle:
-                    if vehicle[f'{list(params)[0]}'] == list(params.values())[0]:
+                    if vehicle[f'{list(params)[0]}'] == list(
+                            params.values()
+                    )[0]:
                         return self.wrap_vehicle(vehicle)
 
     def get_vehicle(self, vehicle_id):
-        response = requests.get(f'{self.url}{GET_ID_URL.format(id=vehicle_id)}')
+        response = requests.get(
+            f'{self.url}{GET_ID_URL.format(id=vehicle_id)}'
+        )
         vehicle = json.loads(response.text)
         return self.wrap_vehicle(vehicle)
 
@@ -107,7 +112,16 @@ class VehicleManger:
         lon2 = radians(vehicle_2.longitude)
         dlong = lon2 - lon1
         dlat = lat2 - lat1
-        ans = pow(sin(dlat / 2), 2) + cos(lat1) * cos(lat2) * pow(sin(dlong / 2), 2)
+        ans = (
+                pow(
+                    sin(dlat / 2), 2
+                )
+                + cos(lat1)
+                * cos(lat2) *
+                pow(
+                    sin(dlong / 2), 2
+                )
+        )
         ans = 2 * asin(sqrt(ans))
         return ans * radius * 1000
 

@@ -5,7 +5,11 @@ if __name__ == '__main__':
 
     manager.get_vehicles()
 
-    print("filter_vehicles", manager.filter_vehicles(params={"name": "Mercedes"}))
+    print(
+        "filter_vehicles", manager.filter_vehicles(
+            params={"name": "Mercedes"}
+        )
+    )
 
     print("get_vehicle", manager.get_vehicle(vehicle_id=1))
 
