@@ -1,11 +1,11 @@
 import json
 from dataclasses import dataclass
+from math import asin, cos, radians, sin, sqrt
 from typing import Optional
-from math import sin, cos, sqrt, radians, asin
 
 import requests
 
-from example_env import GET_URL, POST_URL, GET_ID_URL, PUT_URL, DELETE_URL
+from example_env import DELETE_URL, GET_ID_URL, GET_URL, POST_URL, PUT_URL
 
 
 @dataclass

@@ -1,4 +1,4 @@
-from vehicle_api import VehicleManger, Vehicle
+from vehicle_api import Vehicle, VehicleManger
 
 if __name__ == '__main__':
     manager = VehicleManger(url="https://test.tspb.su/test-task")
